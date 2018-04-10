@@ -31,29 +31,25 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				
 					 @if(count($users) > 0)
-				  			@foreach($users as $user)
-							   
-							    <tr>
-							      <th scope="row">{{ $user->id }}</th>
-							      <td>{{ $user->firstname }}</td>
-							      <td>{{ $user->lastname }}</td>
-							      <td>{{ $user->phone }} </td>
+				  		@foreach($users as $user)	   
+							<tr>
+							     <th scope="row">{{ $user->id }}</th>
+							     <td>{{ $user->firstname }}</td>
+							     <td>{{ $user->lastname }}</td>
+							     <td>{{ $user->phone }}
 
-								@foreach($homedata as $homedatas)
-									
-								      <td>{{$homedatas->device}}</td>
-								      <td>{{$homedatas->reimburse_Pension}}</td>
-								      <td>{{$homedatas->bonus_remainder}}</td>
-
+								@foreach($user->homedatas as $homedata)
+							     	 <tr>
+								      <td>{{$homedata->device}}</td>
+								      <td>{{$homedata->reimburse_Pension}}</td>
+								      <td>{{$homedata->bonus_remainder}}</td>
+							 	 </tr>
 					   			@endforeach
-					 				</td>
-					 			</tr>
-				   			@endforeach		
-				  		@endif
-						
-
+					 			</td>
+					 		</tr>
+				   		@endforeach		
+				  	@endif
 				  </tbody>
 			</table>
 

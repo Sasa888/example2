@@ -41,7 +41,7 @@
 							      <td>{{ $user->lastname }}</td>
 							      <td>{{ $user->phone }} </td>
 
-								@foreach($homedata as $homedatas)
+								@foreach($user->homedata as $homedatas)
 									
 								      <td>{{$homedatas->device}}</td>
 								      <td>{{$homedatas->reimburse_Pension}}</td>

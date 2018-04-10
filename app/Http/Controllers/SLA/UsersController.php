@@ -12,12 +12,12 @@ class UsersController extends Controller
     
     public function index()
     {
-        $users = User::all();
-        $homedata = Homedata::all();
+        $users = User::with(['homedata'])->get();
+        //$homedata = Homedata::all();
         
         
         
-        return view('sla.users.index', compact('users') , compact('homedata'));
+        return view('sla.users.index', ['users' => $users]);
     }
     
      
